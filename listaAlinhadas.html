@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Alinhada</title>
+    <title>Lista Aninhada</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -42,7 +42,48 @@
             text-align: left;
         }
 
-        
+        .tree li{
+            padding: 20px;
+            margin: 5px 0;
+        }
+
+        .tree span[wm-folder]{
+            cursor: pointer;
+            font-weight: bold;
+            color: #00CED1;
+        }
+
+        .tree li>ul{
+            display: none;
+            margin-left: 20px;
+        }
+
+        .tree li>ul li{
+            padding-left: 20px;
+        }
+
+        .tree li>ul li:hover{
+            color: #005F5F;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        /*Efeito de hover no itens da árvore*/
+        .tree li> span[wm-folder]:hover{
+            color: #005F5F;
+        }
+
+        /* Estilo do conteúdo */
+        #conteudo{
+            padding: 30px;
+            background-color: white;
+            margin: 20px auto;
+            width: 80%;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
     </style>
 </head>
 <body>
@@ -50,7 +91,7 @@
     <ul class="tree">
         <li>
             <span wm-folder>backend</span>
-            <ul>
+            <ul id="conteudo">
                 <li>
                     <span wm-folder>app</span>
                     <ul>
@@ -86,11 +127,11 @@
 
     <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
     <script>
-        document.querySelectorALL('[wm-folder]').forEach(folder => {
-            folder.onclick = function(e) {
+        document.querySelectorAll('[wm-folder]').forEach(folder => {
+            folder.onclick = function(e){
                 const ul = folder.nextElementSibling
                 const d = ul.style.display
-                ul.style.display = d === 'nome' ? 'block' : 'none'
+                ul.style.display = d === 'none' ? 'block' : 'none'
             }
         })
     </script>

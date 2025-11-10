@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        /* reset básico */
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 100px;
+            padding: 100px;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container{
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+        }
+
+        h1{
+            text-align: center;
+            color: #00bcd4;
+            margin-bottom: 30px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group{
+            margin-bottom: 15px;
+        }
+
+        label{
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        textarea,
+        select,
+        button{
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #f0f8ff;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulario</h1>
+
+        <form method="POST" action="http://localhost:3003/usuarios">
+            <input type="hidden" name="id" value="3">
+
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Conte um pouco sobre você"></textarea>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Tipo de Usuários</legend>
+                <label for="admin">
+                    <input type="radio" name="tipo" id="admin" value="admin">Admin Supremo
+                </label>
+                <label for="regular">
+                    <input type="radio" name="tipo" id="regular" value="regular"> Regular
+                </label>
+                <label for="professor">
+                    <input type="radio" name="tipo" id="" value="professor"> Professor
+                </label>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="ativo">
+                    <input type="checkbox" name="ativo" id="ativo" value="true"> Ativo
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for ="estado">Estado</label>
+                <select name="estado" id="estado">
+                    <option value="">Selecione</option>
+                    <option value="ac">Acre</option>
+                    <option value="ap">Amapá</option>
+                    <option value="ba">Bahia</option>
+                    <option value="pr">Paraná</option>
+                    <option value="pa">Pará</option>
+                    <option value="sp">São Paulo</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="sc">Santa Catarina</option>
+                    <option value="rs">Rio Grande do Sul</option>
+                    <option value="es">Espirito Santo</option>
+                </select>
+            </div>
+
+                <label for="interesses">Interesses</label>
+                <select name="interesses" id="interesses" multiple size="7">
+                    <option value="js">JavaScript</option>
+                    <option value="java">Java</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+                    <option value="go">Go</option>
+                    <option value="c">C</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Incluir</button>
+                <button formaction="http://localhost:3003/usuarios/3"
+                type="submit">Alterar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

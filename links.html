@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        /* Estilo Goblal */
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #00CED1;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Estilo h1 */
+        h1{
+            text-align: center;
+            color: #00FFFF;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo para os links */
+        a{
+            color: #00FFFF;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover{
+            background-color: #00FFFF;
+            color: #111;
+            transform: translateY(-3px);
+        }
+        /* Seção de Notícia */
+        #noticia{
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #005;
+            border-left: 5px solid #00FFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        #noticia a{
+            color: #00FFFF;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: transparent;
+            border: 2px solid #00FFFF;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        #noticia a:hover{
+            background-color: #00FFFF;
+            color: #111;
+            transform: rotateY(-3px);/* Efeito de evolução */
+        }
+
+        /* scrool suave */
+        html{
+            scroll-behavior: smooth;
+        }
+
+        /* responsividade */
+        @media(max-width:768px){
+            h1{
+                font-size: 2rem;
+            }
+
+            a{
+                font-size: 1rem;
+                padding: 8px 12px;
+            }
+
+            #noticia{
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Links</h1>
+    <!-- URL Abosluta -->
+     <div style="display: flex; flex-direction: column; align-items: center;">
+        <a id="início" href="https://www.google.com/">Google 1</a>
+        <a href="https://www.google.com/" target="_blank">Google 2</a>
+        <br><br>
+        <!-- URI Relativas -->
+         <a href="index.html">Voltar 1</a>
+         <a href="/index.html">Voltar 2</a>
+         <a href="./index.html"> Voltar 3</a>
+     </div>
+
+     <div style="text-align: center; margin-top: 20px;">
+        <a href="#noticia"> Ir para a Notícia</a>
+     </div>
+
+     <div id="noticia" style="position: absolute; top:2000px;">
+        <h2>Notícia Bomba!!!!</h2>
+        <p>Não era nada...</p>
+        <p>Acabou pro beta, sobrou nada</p>
+        <a href="#inicio">Voltar Inicio</a>
+     </div>
+
+</body>
+</html>
