@@ -31,7 +31,7 @@
             font-size: 1.8rem;
             color: #00bcd4;
             margin: 20px 0;
-            text-transform: uppercase;
+            text-transform: uppercase; 
         }
 
         ol, ul, li {
@@ -40,9 +40,9 @@
             padding: 12px;
             margin-bottom: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, backgroun-color 0.3 ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        ol li:hover, ul li:hove{
+        ol li:hover,  ul li:hover{
             transform: translateY(-5px);
             background-color: #00bcd4;
             color: #fff;
@@ -54,7 +54,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 8px;
-            transition: transform 0.3s ease, background-color 0.3 ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         dl dd:hover{
@@ -63,8 +63,13 @@
             color: #fff;
         }
 
+        h1, h2, ol li, ul li, dl dd{
+            list-style: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         h1:hover, h2:hover, ol li:hover, ul li:hover, dl dd:hover{
-            box-shadow: 0 6px 12px rgba(0, 188,212, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 188, 212, 0.3);
         }
     </style>
 </head>
@@ -72,34 +77,34 @@
     <h1>Listas</h1>
 
     <!-- Listas Ordenada -->
-     <h2>Aprovados</h2>
-     <ol>
+    <h2>Aprovados</h2>
+    <ol>
         <li>Bia</li>
         <li>Pedro</li>
         <li>Ana</li>
         <li>João</li>
-     </ol>
-
-     <!-- Lista Não Ordenada -->
-      <h2>Lista De Compras</h2>
-      <ul>
+    </ol>
+    
+    <!-- Lista Não Ordenada -->
+     <h2>Lista de Compras</h2>
+     <ul>
         <li>Queijo</li>
         <li>Leite</li>
         <li>Arroz</li>
         <li>Pão</li>
-      </ul>
+     </ul>
 
-      <!-- Lista de Definida -->
-       <h2>Principais termos do glossário de Clound Computing</h2>
-       <dl>
+     <!-- Lista de Definição -->
+      <h2>Principais termos do glossário de Cloud Computing</h2>
+      <dl>
         <dt>BaaS</dt>
         <dd>Backend Como Serviço</dd>
         <dt>Iaas</dt>
-        <dd>Infrestrututa Como Serviços</dd>
+        <dd>Infraestrutura Como Serviço</dd>
         <dt>Paas</dt>
         <dd>Plataforma Como Serviço</dd>
         <dt>Saas</dt>
         <dd>Software Como Serviço</dd>
-       </dl>
+      </dl>
 </body>
 </html>
