@@ -37,32 +37,32 @@
     <div wm-slider>
         <p>
             <img 
-            src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
-            alt="muro de pedra com mar agitado no fundo"
-            width="513" height="342"
-            title="Muro de Cidade por Tarso Bessa">
+                src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+                alt="Muro de pedra com mar agitado no fundo"
+                width="513" height="342"
+                title="Muro da Cidade por Tarso Bessa">
         </p>
         <p>
             <img 
-            src="http://files.cod3r.com.br/curso-web/imagem2.gif"
-            alt=" Intro cod3r"
-            height="342">
+                src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+                alt="intro cond3r"
+                height="342">
         </p>
         <p class="circular">
-            <img
+            <img 
                 src="http://files.cod3r.com.br/curso-web/imagem3.png"
                 alt="Rio de Janeiro"
                 height="342">
         </p>
 
         <p class="texto">
-            <img
-                src="http://files.cod3r.com.br/curso-web/avatar.png"
+            <img 
+                src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
                 alt="Avatar"
                 height="50"
                 aling="left">
-                <!-- Lorem 80 -->
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At non aliquam consequuntur, minus itaque harum nihil asperiores praesentium adipisci! Ab soluta veritatis eveniet, neque harum dolor magni perferendis eum vel.
+                <!-- lorem-80 -->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis perferendis inventore mollitia reprehenderit possimus optio deleniti! Sunt alias expedita pariatur at in! Debitis aliquid natus officia ab eum earum magni sequi. Nam, ipsa? Consectetur, provident vitae quibusdam repudiandae amet ex possimus porro expedita veritatis obcaecati sit aut eligendi iste sed? Corporis exercitationem laboriosam quisquam, iure eum nesciunt cum odio sint illum ut libero eveniet. Blanditiis, quia, deserunt quam, dignissimos adipisci alias molestiae similique corporis quos reiciendis nam harum! Facilis!
         </p>
 
         <p class="cidade"></p>
@@ -70,18 +70,18 @@
         <p>
             <picture>
                 <source 
-                srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
-                media="(min-width: 600px)">
-                <img 
-                src="http://files.cod3r.com.br/curso-web/logo-estreita.png"
-                alt="Logo">
+                    srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+                    media="(min-width: 600px)">
+                    <img 
+                        src="http://files.cod3r.com.br/curso-web/logo-estreita.png" 
+                        alt="Logo">
             </picture>
         </p>
     </div>
 
     <script>
         function mover(elem, inicio, fim, passo, callback){
-            const novoInicio = inicio -passo;
+            const novoInicio = inicio - passo;
             if(novoInicio >= fim){
                 elem.style.left = novoInicio + 'px'
                 setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
@@ -97,24 +97,23 @@
         }
 
         function exibirSlide(slides, slide){
-            slide.style.display ='block'
+            slide.style.display ='block';
 
             const inicio = innerWidth;
             const fim = slide.clientWidth;
 
             slide.style.left = `${inicio}px`;
 
-            mover(slide,inicio, fim, 5, () => {
-                slide.style.display= 'none';
-                exibirSlide(slides, getProximo(slides, slide))
+            mover(slide, inicio, fim, 5, () =>{
+                slide.style.display = 'none';
+                exibirSlide(slides, getProximo(slides, slide));
             });
         }
 
         function getProximo(lista, atual){
-            const i = lista.indexOf(atual) + 1
+            const i = lista.indexOf(atual) + 1;
             return i < lista.length ? lista[i] : lista[0];
         }
-
 
         slider();
     </script>
